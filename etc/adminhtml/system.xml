@@ -1,0 +1,44 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
+  <system>
+    <tab id="coderkube" translate="label" sortOrder="1" class="ck-tab">
+      <label>Coderkube</label>
+    </tab>
+    <section id="deleteorder" sortOrder="150" type="text" showInDefault="1" showInWebsite="1" showInStore="1">
+      <label>Delete Orders</label>
+      <tab>coderkube</tab>
+      <resource>Coderkube_Deleteorder::config_deleteorder</resource>
+      <group id="general" translate="label" sortOrder="1" type="text" showInDefault="1" showInWebsite="1" showInStore="1">
+        <label>Configuration</label>
+        <attribute type="expanded">1</attribute>
+        <comment>
+          <![CDATA[
+              <div id="ck-info">
+                <a href="https://coderkube.com/" target="_blank">
+                  <img class="ck-logo" src="https://coderkube.com/wp-content/uploads/2017/08/coderkube_logo.png">Coderkube Technologies</a>© 2021
+                  <a href="https://coderkube.com/contact-us/" target="_blank">Contact us</a>
+                  <a href="mailto:info@coderkube.com">Mail for Support</a>
+                  <a href="https://marketplace.magento.com/partner/CKTechnologies" target="_blank">More Extensions</a>
+              </div>
+              <div id="ck-module">
+                  Coderkube Delete Order Extension -
+                 <span> Version 1.0.2 </span>
+              </div>
+              <hr style="border-top: 1px solid #e3e3e3" />
+            ]]>
+        </comment>
+        <field id="enable" translate="label" sortOrder="10" type="select" showInDefault="1" showInWebsite="1" showInStore="1">
+          <label>Delete Order In Order View</label>
+          <source_model>Magento\Config\Model\Config\Source\Enabledisable</source_model>
+        </field>
+        <field id="btnheading" translate="label" sortOrder="20" type="text" showInDefault="1" showInWebsite="1" showInStore="1">
+          <label>Delete Order Button Text</label>
+          <depends>
+            <field id="enable">1</field>
+          </depends>
+          <comment>Text of delete button on order view page</comment>
+        </field>
+      </group>
+    </section>
+  </system>
+</config>
